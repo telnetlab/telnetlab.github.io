@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TelNet Laboratory - Our Team</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/telnet-logo-dark.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo-container">
+                <div class="logo-icon"></div>
+                <div class="logo-text">TelNet Laboratory</div>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html">Courses</a>
+                <a href="#team">Team</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-logo"></div>
+            <h1>#TroubleShootingMakeUsStronger</h1>
+            <p>Telecommunication Network Laboratory</p>
+            <a href="#team" class="cta-button">Our Team</a>
+        </div>
+    </section>
+
+    <section class="team" id="team">
+        <div class="section-title">
+            <h2>Web Design Team</h2>
+        </div>
+        <div class="team-grid" id="teamMembers"></div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 TelNet Laboratory. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const teamMembers = [
+            {name: "Risnanda Pascal", position: " Assistant Coordinator"},
+            {name: "A. Kiflan Jiyaad", position: "Practicum Assistant"},
+            {name: "Alif Surya Akbar", position: "Practicum Assistant"},
+            {name: "Audry Stevany", position: "Practicum Assistant"},
+            {name: "Aulia Ananda Naafi", position: "Practicum Assistant"},
+            {name: "Aura Pradnya", position: "Practicum Assistant"},
+            {name: "Bernike Agustina", position: "Practicum Assistant"},
+            {name: "Fabian Rifqi", position: "Practicum Assistant"},
+            {name: "Feby Christiani", position: "Practicum Assistant"},
+            {name: "Glenn Keevan", position: "Practicum Assistant"},
+            {name: "Naufal Ilmi", position: "Practicum Assistant"},
+            {name: "Richard Tryas", position: "Practicum Assistant"}
+        ];
+
+        function generateTeamMembers() {
+            const teamGrid = document.getElementById('teamMembers');
+            
+            teamMembers.forEach((member, index) => {
+                const memberHTML = `
+                    <div class="team-member">
+                        <div class="member-photo">
+                            <img src="https://avatars.githubusercontent.com/u/203100969?v=4,${index}" alt="${member.name}">
+                        </div>
+                        <h3>${member.name}</h3>
+                        <p>${member.position}</p>
+                        <div class="social-links">
+                            <a href="https://github.com/telnetlab"><i class="fab fa-github"></i></a>
+                            <a href="mailto:telnetlab@duck.com"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                `;
+                teamGrid.innerHTML += memberHTML;
+            });
+        }
+
+        window.onload = generateTeamMembers;
+    </script>
+</body>
+</html>
